@@ -9,15 +9,46 @@ x = 11                          # Variable Assignment
 print(type(x))                  # Get the type of variable. Ex : <class 'int'>
 input("Enter any value : ")     # Take the user input.
 
-#----------------------------------------------------------------------------------
+# Comment                       # Single Line Comment
+''' Multi Line Comment '''      # Multi Line Comment for Documentation Purpose.
+
+#----------------------------------------------------------------------------------------------
 
 2. # Data Types :
 
-my_list = [1,2,3,4]              # List
-my_tuple = (1,2,3,4)             # Tuple
-my_set = {1,2,3,4}               # Set
-my_dict = {"key" : "value"}      # Dictionary.
+my_list = [1,2,3,4]                         # List
+my_tuple = (1,2,3,4)                        # Tuple
+my_set = {1,2,3,4}                          # Set
+my_dict = {"key" : "value"}                 # Dictionary.
 print(my_list,my_tuple,my_set,my_dict )
+
+2.1 # Data Structures :
+
+2.1.a # List :
+
+my_list = [1,2,3,4,5]                       # List(Array)      
+my_list[0]                                  # Access List Item
+my_list[1:4]                                # List Slicing
+my_list.append(6)                           # Add Item to List
+my_list.remove(3)                           # Remove Item from List.
+
+2.1.b # Dictionary :
+
+my_dict = {"Key1" : "Value1", "Key2" : "Value2"}    # Dictionary (HashMap)
+my_dict["Key1"]                                     # Access Dictionary Value
+my_dict["key3"] = "Value3"                          # Add Key-Value Pair.
+
+2.1.c # String Manipulation :
+
+full_name = "Python" + " " + "Developer"         # Concatination
+len('Python Developer')                          # Find String Length
+"Python".upper()                                 # Convert to UpperCase
+"Developer".lower()                              # Convert to LowerCase
+"python developer".capitalize()                  # Convert each word of first letter to UpperCase.
+"Hai Developer..!"[4:14]                         # SubString
+"Hai Developer..!".find("Developer")             # Find SubString
+"Hai Developer..!".replace("Hai", "Python")      # Replace subString
+"Hai Developer..!".split(" ")                    # Split String.
 
 #----------------------------------------------------------------------------------
 
@@ -50,7 +81,12 @@ while x >= 1:               # while loop
 def greet(name):                # Defining Function
     return f"Hello, {name}"
 
-greet("BMTechhy")               # Calling Function.
+greet("BMTechhy")               # Calling Function
+
+def add(a,b):
+    return a + b
+
+add = lambda a, b : a + b       # Lambda Function.
 
 #----------------------------------------------------------------------------------
 
@@ -80,14 +116,45 @@ except ZeroDivisionError:               # Handle Exception
 finally:                                # Always Execute.
     print("Task is Done...!")
 
-#----------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------
 
 8. # File Operation :
 
 with open("Python Libraries.txt", "r") as f :       # Open a file
-    content = f.read()                  # Read file Content
-    print(content)
+    content = f.read()                              # Read file Content
+    lines = f.readlines()                           # Read Line by Line
+    print(lines)
 
-with open("file1.txt", "w") as f :       # Write to a file.
-    f.write("Hello , Developer...!")                    
-#----------------------------------------------------------------------------------
+with open("file1.txt", "w") as f1 :                 # Write to a file
+    f1.write("Hello , Developer...!")
+
+f1.close()                                          # Close a file.
+
+#-----------------------------------------------------------------------------------------
+
+9. # List Comprehension :
+
+[x**2 for x in range (5)]                           # Basic List Comprehension
+[x for x in range(10) if x % 2 == 0]                # List Comprehension with Condition.
+
+#-------------------------------------------------------------------------------------------
+
+10. # Working with Libraries :
+
+import math                                         # Importing a Library
+from math import sqrt                               # From math import sqrt
+math.sqrt(25)                                       # Using a Library Function
+# pip install pandas                                # Install a Library (using pip).
+
+#---------------------------------------------------------------------------------------------
+
+11. # NumPy for Numerical Operation :
+
+import numpy as np                                  # Import Numpy
+arr = np.array([1,2,3,4,5])                         # Create Numpy Array
+arr.reshape(5, 1)                                   # Array Reshaping
+arr + 10, arr * 2                                   # Array Operations
+arr[1:4]                                            # Array Slicing
+np.mean(arr),np.median(arr),np.std(arr)             # Array Statistics.
+
+#---------------------------------------------------------------------------------------------
