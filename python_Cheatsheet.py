@@ -65,7 +65,13 @@ else :                                          # else Condition.
 
 4. # Loops :
 
-for i in range(10):         # for loop
+for i in range(10):         # for loop 
+    if i == 6 :
+        break               # Break Statement
+
+    elif i == 3 :
+        continue            # Continue Statement
+
     print(i, end="\t")
 
 print()
@@ -158,3 +164,29 @@ arr[1:4]                                            # Array Slicing
 np.mean(arr),np.median(arr),np.std(arr)             # Array Statistics.
 
 #---------------------------------------------------------------------------------------------
+
+12. # Pandas for Data Handling :
+
+import pandas as pd                                  # Import Pandas
+pd.DataFrame({"Role" : ["Developer", "Tester"],      # Create DataFrame
+              "Skill" : ["Python", "MySQL"], 
+              "Age" : [33, 30]
+              })
+
+df = pd.read_csv("file.csv")                          # Read Csv File
+df.head()                                             # View Data
+df.describe()                                         # Basic Satistics
+df[df["Age"] > 30]                                    # Filter Data
+df.groupby("Age").mean()                              # Group the Data.
+
+#-----------------------------------------------------------------------------------------------
+
+13. # Matplotlib for Plottiing :
+
+import matplotlib.pyplot as plt                       # Import Matplotlib
+plt.plot([1,2,3],[4,5,6]);plt.show()                  # Simple Plot
+plt.bar([1,2,3],[4,5,6]);plt.show()                   # Bar Plot
+plt.hist([1,2,2,3,4,5]);plt.show()                    # Histogram
+plt.scatter([1,2,3],[4,5,6]);plt.show()               # Scatter Plot.
+
+#-----------------------------------------------------------------------------------------------
