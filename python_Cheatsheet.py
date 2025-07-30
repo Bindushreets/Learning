@@ -190,3 +190,54 @@ plt.hist([1,2,2,3,4,5]);plt.show()                    # Histogram
 plt.scatter([1,2,3],[4,5,6]);plt.show()               # Scatter Plot.
 
 #-----------------------------------------------------------------------------------------------
+
+14. # Different Ways To Use F-Strings in Python :
+
+14.1 # Print or store strings with variables and expressions :
+
+num = 5
+print("Square of", num, "is", num*num) # Square of 5 is 25
+
+# OR
+
+num = 5
+print(f"Square of {num} is {num * num}") # Square of 5 is 25
+
+14.2 # Print Better Floats with F-Strings :
+
+temperature = 3.2000056
+print(f"Temperature is {temperature} Celcius") # Temperature is 3.2000056 Celcius
+print(f"Temperature is {temperature: .2f} Celcius") # Temperature is  3.20 Celcius
+print(f"Temperature is {temperature: .3f} Celcius") # Temperature is  3.200 Celcius
+
+14.3 # Create tables The Better way :
+
+items = ["Samosa","Kachori","Dhokla","Gulab Jamun"]
+quantities = [53,35,100,50]
+
+for item, quantity in zip(items, quantities):
+    print(f"| {item:15} | {quantity: >10} |") # >10 tells Python to print the strings right justified
+'''
+Output :
+        | Samosa          |         53 |
+        | Kachori         |         35 |
+        | Dhokla          |        100 |
+        | Gulab Jamun     |         50 |
+'''
+# OR
+
+print(f"| {"Items":15} | {"Quantities":10} |")
+print(f"| {"-"*15} | {"-"*10} |")
+for item, quantity in zip(items, quantities):
+    print(f"| {item:15} | {quantity: >10} |")
+
+'''
+Output :
+        | Items           | Quantities |
+        | --------------- | ---------- |
+        | Samosa          |         53 |
+        | Kachori         |         35 |
+        | Dhokla          |        100 |
+        | Gulab Jamun     |         50 |
+'''
+#-----------------------------------------------------------------------------------------------
