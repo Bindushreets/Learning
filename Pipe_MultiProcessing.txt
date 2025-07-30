@@ -1,0 +1,44 @@
+#---------------------------------------------------------------------------------------------------------------------
+'''
+    Documentation on Pipe :
+
+    1. Key features :
+
+            1.  Simple and Lightweight : Compared to other inter-process communication(IPC) mechanisms,
+                                        Pipe is straightforward and better suited for two-process communication.
+            2.  Full-Duplex : Data can flow in both directions simultaneously.
+            3.  Automatic Serialization: The Pipe automatically serializes Python objects 
+                                        (using pickle) when sending messages.
+
+    2.  How does IPC (Inter-Process Communication) work through a pipe? :
+                Each process has its own memory space and processes don’t share memory,
+                    the pipe is not implemented by letting the two processes access the same variables.
+                    so IPC work through a Pipe by using below steps.
+
+                        1.  Separate Buffers :
+                            Each end of the Pipe maintains its own buffer.
+                            These buffers are part of the operating system’s IPC mechanisms,
+                            such as pipes, sockets, or similar constructs, depending on the platform.
+
+                        2.  Serialization :
+                            When one process calls send(data) on its end of the pipe,
+                            the data is serialized 
+                            (converted into a byte stream using pickle or a similar serialization mechanism).
+                            This byte stream is written into the sending end’s buffer.
+
+                        3.  Transmission :
+                            The serialized data is passed through the pipe’s underlying mechanism
+                            (e.g., system-level pipe or socket) to the receiving end’s buffer.
+
+                        4.  Deserialization :
+                            When the other process calls recv(),
+                            the data is read from its end of the pipe's buffer.
+                            This data is then deserialized back into a Python object.
+
+    3.  Conclude :  The data is copied from the sending process’s memory to the pipe’s buffer 
+                    and then to the receiving process’s memory.
+                    Therefore, even if two processes do not share memory directly, the IPC can happen.                           
+    4. Cons : A Pipe is limited to communication between two processes
+                    (the two ends of the pipe).
+'''
+#---------------------------------------------------------------------------------------------------------------------

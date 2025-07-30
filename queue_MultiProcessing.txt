@@ -1,0 +1,43 @@
+#---------------------------------------------------------------------------------------------------------------------
+''' 
+Documentation on Queue : 
+    1.  Definition :
+        In Python's multiprocessing module,
+            Queue is a process-safe FIFO (First In, First Out) data structure, 
+            It is a smart choice instead of 'Pipe'.
+            
+    2. There are two key operations for a multiprocessing queue :
+        1.  put(data): Adds data to the queue.
+        2.  get(): Retrieves data from the queue.
+
+    3.  It can handle multiple producers (processes that put data into the queue) 
+            and multiple consumers (processes that get data from the queue) concurrently.
+    
+    4.  'multiprocessing.Queue' in Python differs significantly from the normal 
+            (thread-based) queue provided by the 'queue.Queue' module.
+    
+    5.  The queue.Queue is limited to threads within a single process,
+            it cannot be used for communication between processes.
+    
+    6.  'queue.Queue' :
+        In a multiprocessing context, the data will not be accessible to other processes
+        because processes do not share memory.
+        Each process gets its own memory space, making 'queue.Queue' ineffective.
+    
+    7. Does the 'multiprocessing.Queue' let different processes share memory?
+        No, 
+            Because under the hood, the multiprocessing.
+            Queue is built on top of 'multiprocessing.Pipe' and 'semaphores'.
+    
+    8.  'semaphores' :
+            It is a variable or abstract data type, 
+                used to control access to a common resource by multiple threads 
+                and avoid critical section problems in a concurrent system
+                such as a multitasking operating system.
+            Semaphores are a type of synchronization primitive.
+                A trivial semaphore is a plain variable that is changed
+                (for example, incremented or decremented, or toggled)
+                depending on programmer-defined conditions.
+'''
+#---------------------------------------------------------------------------------------------------------------------
+
