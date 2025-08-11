@@ -226,8 +226,8 @@ Output :
 '''
 # OR
 
-print(f"| {"Items":15} | {"Quantities":10} |")
-print(f"| {"-"*15} | {"-"*10} |")
+print(f"| {'Items':15} | {'Quantities':10} |")
+print(f"| {'-' * 15} | {'-' * 10} |")
 for item, quantity in zip(items, quantities):
     print(f"| {item:15} | {quantity: >10} |")
 
@@ -241,3 +241,4 @@ Output :
         | Gulab Jamun     |         50 |
 '''
 #-----------------------------------------------------------------------------------------------
+
